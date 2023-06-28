@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class DragPerformerGenerator {
 
+    private final int MAX_STAT_VALUE = 10;
     private FileReader fileReader;
 
     public DragPerformerGenerator(FileReader fileReader) {
@@ -48,13 +49,17 @@ public class DragPerformerGenerator {
 
     private Map<String, Integer> randomDragSkills(List<String> listOfSkills) {
         Map<String, Integer> dragSkills = new HashMap<String, Integer>();
-        // TODO: implement
+        for (Map.Entry<String, Integer> entry : dragSkills.entrySet()) {
+            entry.setValue((int)(Math.random() * MAX_STAT_VALUE));
+        }
         return dragSkills;
     }
 
     private List<String> randomDragAesthetics(List<String> listOfAesthetics) {
         List<String> aesthetics = new ArrayList<String>();
-        // TODO: implement
+        for (int i = 0; i < 2; i++) {
+            aesthetics.add(listOfAesthetics.get((int)(Math.random() * listOfAesthetics.size())));
+        }
         return aesthetics;
     }
 
