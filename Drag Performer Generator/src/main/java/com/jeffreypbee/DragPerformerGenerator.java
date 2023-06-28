@@ -37,7 +37,7 @@ public class DragPerformerGenerator {
 
     private List<String> getDragAesthetics() throws FileNotFoundException {
         List<String> listOfDragAesthetics = new ArrayList<String>();
-        listOfDragAesthetics = fileReader.getListOfStrings("dragaesthetics.txt.txt");
+        listOfDragAesthetics = fileReader.getListOfStrings("dragaesthetics.txt");
         return listOfDragAesthetics;
     }
 
@@ -49,8 +49,8 @@ public class DragPerformerGenerator {
 
     private Map<String, Integer> randomDragSkills(List<String> listOfSkills) {
         Map<String, Integer> dragSkills = new HashMap<String, Integer>();
-        for (Map.Entry<String, Integer> entry : dragSkills.entrySet()) {
-            entry.setValue((int)(Math.random() * MAX_STAT_VALUE));
+        for (String skill : listOfSkills) {
+            dragSkills.put(skill, (int)(Math.random() * MAX_STAT_VALUE));
         }
         return dragSkills;
     }

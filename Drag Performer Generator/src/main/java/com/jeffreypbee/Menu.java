@@ -1,5 +1,6 @@
 package com.jeffreypbee;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Menu {
@@ -17,6 +18,18 @@ public class Menu {
         String userInput = in.nextLine();
         input = Integer.parseInt(userInput);
         return input;
+    }
+
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
+
+    public void displayDragPerformer(DragPerformer performer) {
+        System.out.println(performer.getDragName());
+        System.out.println(performer.getAesthetics().get(0) + " & " + performer.getAesthetics().get(1));
+        for (Map.Entry<String, Integer> entry : performer.getSkills().entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 
 }

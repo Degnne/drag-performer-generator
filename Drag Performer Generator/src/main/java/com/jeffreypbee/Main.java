@@ -1,5 +1,7 @@
 package com.jeffreypbee;
 
+import java.io.FileNotFoundException;
+
 public class Main {
 
     private FileReader fileReader;
@@ -22,8 +24,13 @@ public class Main {
             menu.displayMenu();
             int selection = menu.promptUserForInt();
             if (selection == GENERATE_DRAG_PERFORMER) {
-                //TODO: Generate Drag Performer
+                try {
+                    menu.displayDragPerformer(dragGenerator.generate());
+                } catch (FileNotFoundException e) {
+                    menu.displayMessage("File Not Found");
+                }
             } else if (selection == QUIT) {
+                // TODO: End Program
                 break;
             }
         }
