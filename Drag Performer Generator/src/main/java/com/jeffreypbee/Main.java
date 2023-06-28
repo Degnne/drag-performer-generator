@@ -9,7 +9,7 @@ public class Main {
     private Menu menu = new Menu();
 
     private final int GENERATE_DRAG_PERFORMER = 1;
-    private final int QUIT = 0;
+    private final int QUIT = 2;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -30,7 +30,6 @@ public class Main {
                     menu.displayMessage("File Not Found");
                 }
             } else if (selection == QUIT) {
-                // TODO: End Program
                 break;
             }
         }

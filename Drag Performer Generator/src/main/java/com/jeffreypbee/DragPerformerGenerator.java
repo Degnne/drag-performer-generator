@@ -1,10 +1,7 @@
 package com.jeffreypbee;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class DragPerformerGenerator {
 
@@ -48,7 +45,7 @@ public class DragPerformerGenerator {
     }
 
     private Map<String, Integer> randomDragSkills(List<String> listOfSkills) {
-        Map<String, Integer> dragSkills = new HashMap<String, Integer>();
+        Map<String, Integer> dragSkills = new LinkedHashMap<>();
         for (String skill : listOfSkills) {
             dragSkills.put(skill, (int)(Math.random() * MAX_STAT_VALUE));
         }
