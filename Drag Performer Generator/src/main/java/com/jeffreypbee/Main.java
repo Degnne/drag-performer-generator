@@ -14,15 +14,21 @@ public class Main {
     }
 
     public void run() {
-        fileReader = new FileReader("src/main/resources/dragnames.txt");
+        fileReader = new FileReader("src/main/resources/");
         List<String> listOfNames = new ArrayList<>();
         try {
-            listOfNames = fileReader.getListOfNames();
+            listOfNames = fileReader.getListOfStrings("dragnames.txt");
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
-        for (String name : listOfNames) {
-            System.out.println(name);
+        List<String> listOfSkills = new ArrayList<String>();
+        try {
+            listOfSkills = fileReader.getListOfStrings("dragskills.txt");
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        for (String skill : listOfSkills) {
+            System.out.println(skill);
         }
     }
 }

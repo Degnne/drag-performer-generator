@@ -14,14 +14,13 @@ public class FileReader {
         this.filePath = filePath;
     }
 
-    public List<String> getListOfNames() throws FileNotFoundException {
-        List<String> listOfNames = new ArrayList<String>();
-        File fileObject = new File(filePath);
+    public List<String> getListOfStrings(String fileName) throws FileNotFoundException {
+        List<String> listOfStrings = new ArrayList<String>();
+        File fileObject = new File(filePath + fileName);
         Scanner scanner = new Scanner(fileObject);
         while (scanner.hasNextLine()) {
-            listOfNames.add(scanner.nextLine());
+            listOfStrings.add(scanner.nextLine());
         }
-        return listOfNames;
+        return listOfStrings;
     }
-
 }
